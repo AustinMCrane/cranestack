@@ -7,25 +7,10 @@ import (
 	cranedb "github.com/AustinMCrane/cranekit/db"
 )
 
-const createUsers = `
-CREATE TABLE IF NOT EXISTS users (
-    id         TEXT PRIMARY KEY,
-    email      TEXT NOT NULL UNIQUE,
-    created_at DATETIME NOT NULL DEFAULT (datetime('now'))
-);`
-
-const createAPIKeys = `
-CREATE TABLE IF NOT EXISTS api_keys (
-    id         TEXT PRIMARY KEY,
-    user_id    TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    key_hash   TEXT NOT NULL UNIQUE,
-    label      TEXT NOT NULL,
-    created_at DATETIME NOT NULL DEFAULT (datetime('now'))
-);`
-
-// Open initializes the CraneStack SQLite database and runs schema migrations.
-func Open(path string) (*sql.DB, error) {
-	conn, err := cranedb.Open(path, []string{createUsers, createAPIKeys})
+// Open initializes the CraneStack SQLite database and runs app-specific
+// migrations on top of the base auth schema (users + api_keys).
+func Open(path string, extra []string) (*sql.DB, error) {
+	conn, err := cranedb.OpenWithBaseSchemas(path, extra)
 	if err != nil {
 		return nil, fmt.Errorf("cranestack db: %w", err)
 	}

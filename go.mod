@@ -3,7 +3,7 @@ module github.com/AustinMCrane/cranestack
 go 1.23.0
 
 require (
-	github.com/AustinMCrane/cranekit v0.1.0
+	github.com/AustinMCrane/cranekit v0.3.0
 	github.com/go-chi/chi/v5 v5.2.5
 	github.com/mark3labs/mcp-go v0.45.0
 )
@@ -21,4 +21,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/AustinMCrane/cranekit v0.1.0 => ../cranekit
+replace github.com/AustinMCrane/cranekit v0.3.0 => ../cranekit

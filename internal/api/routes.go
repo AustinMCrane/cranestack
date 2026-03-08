@@ -13,14 +13,14 @@ func (s *Server) routes() *chi.Mux {
 	r.Use(middleware.Logger)
 	r.Use(middleware.Recoverer)
 
-	h := handlers.New(s.repo)
+	h := handlers.New(s.repo, s.sessions)
 
 	// Public auth endpoints
 	r.Post("/auth/login", h.Login)
 
-	// Protected endpoints — require a valid session token
+	// Protected endpoints — require a valid session token or PAT
 	r.Group(func(r chi.Router) {
-		r.Use(RequireAuth(s.sessions))
+		r.Use(RequireAnyAuth(s.sessions, s.repo))
 		r.Post("/auth/generate-mcp-key", h.GenerateMCPKey)
 		r.Get("/api/data", h.GetData)
 	})

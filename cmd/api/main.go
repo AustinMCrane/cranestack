@@ -19,7 +19,7 @@ func main() {
 		dbPath = "cranestack.db"
 	}
 
-	sqlDB, err := db.Open(dbPath)
+	sqlDB, err := db.Open(dbPath, nil)
 	if err != nil {
 		slog.Error("open db", "err", err)
 		os.Exit(1)

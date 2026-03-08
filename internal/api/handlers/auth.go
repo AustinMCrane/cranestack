@@ -1,11 +1,7 @@
 package handlers
 
 import (
-	"crypto/rand"
-	"crypto/sha256"
-	"encoding/hex"
 	"encoding/json"
-	"fmt"
 	"net/http"
 
 	"github.com/AustinMCrane/cranekit/auth"
@@ -13,13 +9,38 @@ import (
 )
 
 // Login handles POST /auth/login.
-// It accepts an Apple identity token and exchanges it for a session.
+// It accepts an Apple identity token, upserts the user, creates a session,
+// and returns a session token.
 func (h *Handlers) Login(w http.ResponseWriter, r *http.Request) {
-	// TODO: parse Apple identity token from request body
-	// TODO: verify token with Apple's public keys
-	// TODO: upsert user in DB, create session, return session token
+	var req struct {
+		IdentityToken string `json:"identity_token"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil || req.IdentityToken == "" {
+		http.Error(w, "identity_token required", http.StatusBadRequest)
+		return
+	}
+
+	claims, err := auth.ParseAppleIDToken(req.IdentityToken)
+	if err != nil {
+		http.Error(w, "invalid identity token", http.StatusBadRequest)
+		return
+	}
+
+	userID := "apple_" + claims.Sub
+	if err := h.repo.CreateUser(&db.User{ID: userID, Email: claims.Email}); err != nil {
+		http.Error(w, "failed to create user", http.StatusInternalServerError)
+		return
+	}
+
+	sessionToken, err := auth.GeneratePAT("session_")
+	if err != nil {
+		http.Error(w, "failed to generate session", http.StatusInternalServerError)
+		return
+	}
+	h.sessions.Register(sessionToken, userID)
+
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(map[string]string{"status": "not implemented"})
+	json.NewEncoder(w).Encode(map[string]string{"token": sessionToken})
 }
 
 // GenerateMCPKey handles POST /auth/generate-mcp-key.
@@ -31,49 +52,12 @@ func (h *Handlers) GenerateMCPKey(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	rawToken, err := generatePAT()
+	rawToken, err := h.repo.GenerateAPIKey(userID, "MCP Token", "cranestack_")
 	if err != nil {
 		http.Error(w, "failed to generate token", http.StatusInternalServerError)
 		return
 	}
 
-	hash := sha256.Sum256([]byte(rawToken))
-	keyHash := hex.EncodeToString(hash[:])
-
-	id, err := newID()
-	if err != nil {
-		http.Error(w, "failed to generate id", http.StatusInternalServerError)
-		return
-	}
-
-	if err := h.repo.StoreAPIKeyHash(&db.APIKey{
-		ID:      id,
-		UserID:  userID,
-		KeyHash: keyHash,
-		Label:   "MCP Token",
-	}); err != nil {
-		http.Error(w, "failed to store token", http.StatusInternalServerError)
-		return
-	}
-
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]string{"token": rawToken})
-}
-
-// generatePAT creates a cryptographically random PAT with a "cranestack_" prefix.
-func generatePAT() (string, error) {
-	b := make([]byte, 32)
-	if _, err := rand.Read(b); err != nil {
-		return "", fmt.Errorf("rand: %w", err)
-	}
-	return "cranestack_" + hex.EncodeToString(b), nil
-}
-
-// newID generates a random hex ID.
-func newID() (string, error) {
-	b := make([]byte, 16)
-	if _, err := rand.Read(b); err != nil {
-		return "", fmt.Errorf("rand: %w", err)
-	}
-	return hex.EncodeToString(b), nil
 }

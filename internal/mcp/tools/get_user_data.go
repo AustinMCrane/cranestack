@@ -1,28 +1,29 @@
 package tools
 
 import (
-	"context"
+	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 
-	"github.com/mark3labs/mcp-go/mcp"
-	mcpserver "github.com/mark3labs/mcp-go/server"
+	cranemcp "github.com/AustinMCrane/cranekit/mcp"
 )
 
-// RegisterGetUserData registers the get_user_data tool on the MCP server.
-func RegisterGetUserData(s *mcpserver.MCPServer, client *http.Client, apiBaseURL string) {
-	tool := mcp.NewTool("get_user_data",
-		mcp.WithDescription("Fetches user data from the CraneStack REST API."),
-	)
+// Register wires all tools onto the given server.
+func Register(s *cranemcp.MCPServer) {
+	registerGetUserData(s)
+}
 
-	s.AddTool(tool, func(ctx context.Context, req mcp.CallToolRequest) (*mcp.CallToolResult, error) {
-		// TODO: replace with real endpoint and parse the response
-		resp, err := client.Get(fmt.Sprintf("%s/api/data", apiBaseURL))
-		if err != nil {
-			return mcp.NewToolResultError(err.Error()), nil
-		}
-		defer resp.Body.Close()
-
-		return mcp.NewToolResultText("get_user_data stub: received response"), nil
-	})
+// getJSON performs an authenticated GET and decodes JSON into out.
+func getJSON(client *http.Client, url string, out any) error {
+	resp, err := client.Get(url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode >= 300 {
+		body, _ := io.ReadAll(resp.Body)
+		return fmt.Errorf("GET %s: %d %s", url, resp.StatusCode, string(body))
+	}
+	return json.NewDecoder(resp.Body).Decode(out)
 }
