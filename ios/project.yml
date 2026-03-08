@@ -1,0 +1,30 @@
+name: ToeDoe
+options:
+  bundleIdPrefix: com.austinmcrane
+  deploymentTarget:
+    iOS: "18.0"
+  xcodeVersion: "16.0"
+
+targets:
+  ToeDoe:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: ToeDoe
+    info:
+      path: ToeDoe/Info.plist
+      properties:
+        UILaunchScreen:
+          UIColorName: ""
+        CFBundleDisplayName: ToeDoe
+    entitlements:
+      path: ToeDoe/ToeDoe.entitlements
+      properties:
+        com.apple.developer.applesignin:
+          - Default
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.austinmcrane.toedoe
+        SWIFT_VERSION: "5.0"
+        DEVELOPMENT_TEAM: ""

@@ -1,0 +1,13 @@
+# Go binaries
+cmd/api/api
+cmd/mcp/mcp
+
+# SQLite databases
+*.db
+
+# macOS
+.DS_Store
+
+# Xcode user data
+ios/ToeDoe.xcodeproj/xcuserdata/
+ios/ToeDoe.xcodeproj/project.xcworkspace/xcuserdata/
