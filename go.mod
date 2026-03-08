@@ -1,4 +1,4 @@
-module github.com/AustinMCrane/toedoe
+module github.com/AustinMCrane/cranestack
 
 go 1.23.0
 

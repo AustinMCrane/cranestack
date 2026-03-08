@@ -9,7 +9,7 @@ import (
 	"net/http"
 
 	"github.com/AustinMCrane/cranekit/auth"
-	"github.com/AustinMCrane/toedoe/internal/db"
+	"github.com/AustinMCrane/cranestack/internal/db"
 )
 
 // Login handles POST /auth/login.
@@ -60,13 +60,13 @@ func (h *Handlers) GenerateMCPKey(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(map[string]string{"token": rawToken})
 }
 
-// generatePAT creates a cryptographically random PAT with a "toedoe_" prefix.
+// generatePAT creates a cryptographically random PAT with a "cranestack_" prefix.
 func generatePAT() (string, error) {
 	b := make([]byte, 32)
 	if _, err := rand.Read(b); err != nil {
 		return "", fmt.Errorf("rand: %w", err)
 	}
-	return "toedoe_" + hex.EncodeToString(b), nil
+	return "cranestack_" + hex.EncodeToString(b), nil
 }
 
 // newID generates a random hex ID.

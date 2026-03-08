@@ -1,4 +1,4 @@
-# ToeDoe
+# CraneStack
 
 A monorepo boilerplate for a three-component stack:
 
@@ -51,7 +51,7 @@ MCP_PAT_TOKEN=<your-pat> MCP_TRANSPORT=stdio go run ./cmd/mcp
 
 ### iOS App
 
-1. Open `ios/ToeDoe.xcodeproj` in Xcode
+1. Open `ios/CraneStack.xcodeproj` in Xcode
 2. Select a simulator or device
 3. Build & Run (`⌘R`)
 4. In development, tap **Dev Login** to bypass Apple Sign-In
@@ -67,7 +67,7 @@ cd ios && xcodegen generate
 
 | Variable | Default | Description |
 |---|---|---|
-| `DB_PATH` | `toedoe.db` | Path to the SQLite database file |
+| `DB_PATH` | `cranestack.db` | Path to the SQLite database file |
 | `PORT` | `8080` | Port the API listens on |
 | `DEV_SESSION_TOKEN` | _(unset)_ | When set, registers a dev session for local testing without Apple Sign-In |
 | `LOG_FORMAT` | `json` | Log format: `json` or `text` |
@@ -98,7 +98,7 @@ make run-mcp PAT=<token from step 2>
 ## Project Structure
 
 ```
-toedoe/
+cranestack/
 ├── cmd/
 │   ├── api/main.go          # REST API entrypoint
 │   └── mcp/main.go          # MCP server entrypoint
@@ -120,8 +120,8 @@ toedoe/
 │       └── tools/            # MCP tool definitions
 └── ios/
     ├── project.yml           # xcodegen spec
-    └── ToeDoe/
-        ├── ToeDoeApp.swift
+    └── CraneStack/
+        ├── CraneStackApp.swift
         ├── AuthManager.swift
         ├── APIClient.swift
         └── Views/

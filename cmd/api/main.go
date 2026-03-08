@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/AustinMCrane/cranekit/server"
-	"github.com/AustinMCrane/toedoe/internal/api"
-	"github.com/AustinMCrane/toedoe/internal/db"
+	"github.com/AustinMCrane/cranestack/internal/api"
+	"github.com/AustinMCrane/cranestack/internal/db"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 
 	dbPath := os.Getenv("DB_PATH")
 	if dbPath == "" {
-		dbPath = "toedoe.db"
+		dbPath = "cranestack.db"
 	}
 
 	sqlDB, err := db.Open(dbPath)

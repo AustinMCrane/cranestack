@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/AustinMCrane/toedoe/internal/api/handlers"
+	"github.com/AustinMCrane/cranestack/internal/api/handlers"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )

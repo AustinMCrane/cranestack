@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/AustinMCrane/cranekit/server"
-	"github.com/AustinMCrane/toedoe/internal/mcp"
+	"github.com/AustinMCrane/cranestack/internal/mcp"
 )
 
 func main() {

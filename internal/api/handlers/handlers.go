@@ -1,6 +1,6 @@
 package handlers
 
-import "github.com/AustinMCrane/toedoe/internal/db"
+import "github.com/AustinMCrane/cranestack/internal/db"
 
 // Handlers holds shared dependencies for all HTTP handlers.
 type Handlers struct {

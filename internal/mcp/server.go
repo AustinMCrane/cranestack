@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/AustinMCrane/toedoe/internal/mcp/tools"
+	"github.com/AustinMCrane/cranestack/internal/mcp/tools"
 	mcpserver "github.com/mark3labs/mcp-go/server"
 )
 
@@ -30,7 +30,7 @@ func NewServer() *Server {
 	}
 
 	s := &Server{
-		mcp:        mcpserver.NewMCPServer("toedoe-mcp", "0.1.0"),
+		mcp:        mcpserver.NewMCPServer("cranestack-mcp", "0.1.0"),
 		apiBaseURL: apiBaseURL,
 		transport:  transport,
 		ssePort:    9090,

@@ -12,7 +12,7 @@ import (
 // RegisterGetUserData registers the get_user_data tool on the MCP server.
 func RegisterGetUserData(s *mcpserver.MCPServer, client *http.Client, apiBaseURL string) {
 	tool := mcp.NewTool("get_user_data",
-		mcp.WithDescription("Fetches user data from the ToeDoe REST API."),
+		mcp.WithDescription("Fetches user data from the CraneStack REST API."),
 	)
 
 	s.AddTool(tool, func(ctx context.Context, req mcp.CallToolRequest) (*mcp.CallToolResult, error) {

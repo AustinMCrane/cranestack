@@ -23,11 +23,11 @@ CREATE TABLE IF NOT EXISTS api_keys (
     created_at DATETIME NOT NULL DEFAULT (datetime('now'))
 );`
 
-// Open initializes the ToeDoe SQLite database and runs schema migrations.
+// Open initializes the CraneStack SQLite database and runs schema migrations.
 func Open(path string) (*sql.DB, error) {
 	conn, err := cranedb.Open(path, []string{createUsers, createAPIKeys})
 	if err != nil {
-		return nil, fmt.Errorf("toedoe db: %w", err)
+		return nil, fmt.Errorf("cranestack db: %w", err)
 	}
 	return conn, nil
 }
