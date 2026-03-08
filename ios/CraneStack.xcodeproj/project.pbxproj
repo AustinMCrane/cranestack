@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0ACA0B125E566C7399285177 /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C221DD0B1176B97A694ECDEF /* MyApp.swift */; };
+		283C3116CDA3873E344A6DEC /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1A0DCE032CD3DAE7FB13C /* AuthManager.swift */; };
+		577301C0840F660B1A3F1193 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EE055AA27724F105BAE94 /* LoginView.swift */; };
+		886EF9250FED23E663DCC87C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7D3E110155231150CBDABD /* MainTabView.swift */; };
+		9C5BFD4C515BF76A50E3CA49 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D5F1C40BC02C3B32F402E /* SettingsView.swift */; };
+		CC36292B8437490A6B662095 /* CraneKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55D501060FA3373E2FA7EB3F /* CraneKit */; };
+		EEEBAA6AE4C9D45348127ADD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F88D557D233E69D10529242 /* APIClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		001D5F1C40BC02C3B32F402E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1E7D3E110155231150CBDABD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		3A14D7D77731D9A109459754 /* CraneStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CraneStack.entitlements; sourceTree = "<group>"; };
+		4F88D557D233E69D10529242 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		52E1A0DCE032CD3DAE7FB13C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		5B7EE055AA27724F105BAE94 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5D07AF0A2CCEBAFF09BD25F4 /* MyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyApp.entitlements; sourceTree = "<group>"; };
+		99CC790C6470AEC4D2431E9A /* CraneStack.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CraneStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A37E807F5E7B7F162A6579 /* cranekit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cranekit; path = ../../cranekit; sourceTree = SOURCE_ROOT; };
+		C221DD0B1176B97A694ECDEF /* MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp.swift; sourceTree = "<group>"; };
+		FD723E4C6E070742B2F749D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DF2B8E942F98E6376A7CED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC36292B8437490A6B662095 /* CraneKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		866E202030F75EB9868AAECD = {
+			isa = PBXGroup;
+			children = (
+				AB0B8E1E0D1C5CAEC97FB18E /* CraneStack */,
+				9C804B322236903B47F522D4 /* Packages */,
+				D69305B17DBDA7DE68386BFD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C804B322236903B47F522D4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B1A37E807F5E7B7F162A6579 /* cranekit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		A8FA9E0AEF56D0BBAC4CBE02 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B7EE055AA27724F105BAE94 /* LoginView.swift */,
+				1E7D3E110155231150CBDABD /* MainTabView.swift */,
+				001D5F1C40BC02C3B32F402E /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB0B8E1E0D1C5CAEC97FB18E /* CraneStack */ = {
+			isa = PBXGroup;
+			children = (
+				4F88D557D233E69D10529242 /* APIClient.swift */,
+				52E1A0DCE032CD3DAE7FB13C /* AuthManager.swift */,
+				3A14D7D77731D9A109459754 /* CraneStack.entitlements */,
+				FD723E4C6E070742B2F749D1 /* Info.plist */,
+				5D07AF0A2CCEBAFF09BD25F4 /* MyApp.entitlements */,
+				C221DD0B1176B97A694ECDEF /* MyApp.swift */,
+				A8FA9E0AEF56D0BBAC4CBE02 /* Views */,
+			);
+			path = CraneStack;
+			sourceTree = "<group>";
+		};
+		D69305B17DBDA7DE68386BFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99CC790C6470AEC4D2431E9A /* CraneStack.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD2DC3F6DF5B98D73826C63 /* CraneStack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70C238E816C6CB1FE1AF048E /* Build configuration list for PBXNativeTarget "CraneStack" */;
+			buildPhases = (
+				C0169A103150B892D89FCC89 /* Sources */,
+				4DF2B8E942F98E6376A7CED2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CraneStack;
+			packageProductDependencies = (
+				55D501060FA3373E2FA7EB3F /* CraneKit */,
+			);
+			productName = CraneStack;
+			productReference = 99CC790C6470AEC4D2431E9A /* CraneStack.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2BE68629F68973F948C2785 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					8DD2DC3F6DF5B98D73826C63 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 40E74816BCE5DCC7F958E167 /* Build configuration list for PBXProject "CraneStack" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 866E202030F75EB9868AAECD;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EDD588FA86E0D46C16F5D47F /* XCLocalSwiftPackageReference "../../cranekit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D69305B17DBDA7DE68386BFD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD2DC3F6DF5B98D73826C63 /* CraneStack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0169A103150B892D89FCC89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEEBAA6AE4C9D45348127ADD /* APIClient.swift in Sources */,
+				283C3116CDA3873E344A6DEC /* AuthManager.swift in Sources */,
+				577301C0840F660B1A3F1193 /* LoginView.swift in Sources */,
+				886EF9250FED23E663DCC87C /* MainTabView.swift in Sources */,
+				0ACA0B125E566C7399285177 /* MyApp.swift in Sources */,
+				9C5BFD4C515BF76A50E3CA49 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4B97274DD160BD472041EAFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CraneStack/CraneStack.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CraneStack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.austinmcrane.cranestack;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		840A44934048A36A2D3D61AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BC7E8C65636474E464D82B02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CraneStack/CraneStack.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CraneStack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.austinmcrane.cranestack;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEE1E582503D3F9949EF21DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40E74816BCE5DCC7F958E167 /* Build configuration list for PBXProject "CraneStack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840A44934048A36A2D3D61AB /* Debug */,
+				CEE1E582503D3F9949EF21DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		70C238E816C6CB1FE1AF048E /* Build configuration list for PBXNativeTarget "CraneStack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B97274DD160BD472041EAFB /* Debug */,
+				BC7E8C65636474E464D82B02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		EDD588FA86E0D46C16F5D47F /* XCLocalSwiftPackageReference "../../cranekit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../cranekit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55D501060FA3373E2FA7EB3F /* CraneKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CraneKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A2BE68629F68973F948C2785 /* Project object */;
+}
