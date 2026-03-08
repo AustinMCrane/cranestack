@@ -1,26 +1,37 @@
 package main
 
 import (
-	"log"
+	"log/slog"
 	"os"
 
 	"github.com/AustinMCrane/toedoe/internal/mcp"
 )
 
 func main() {
-	if os.Getenv("MCP_PAT_TOKEN") == "" {
-		log.Fatal("MCP_PAT_TOKEN environment variable is required")
+	var handler slog.Handler
+	opts := &slog.HandlerOptions{Level: slog.LevelInfo}
+	if os.Getenv("LOG_FORMAT") == "text" {
+		handler = slog.NewTextHandler(os.Stdout, opts)
+	} else {
+		handler = slog.NewJSONHandler(os.Stdout, opts)
 	}
+	slog.SetDefault(slog.New(handler))
 
-	srv := mcp.NewServer()
+	if os.Getenv("MCP_PAT_TOKEN") == "" {
+		slog.Error("MCP_PAT_TOKEN environment variable is required")
+		os.Exit(1)
+	}
 
 	transport := os.Getenv("MCP_TRANSPORT")
 	if transport == "" {
 		transport = "sse"
 	}
-	log.Printf("MCP server starting with %s transport", transport)
+
+	srv := mcp.NewServer()
+	slog.Info("MCP server starting", "transport", transport)
 
 	if err := srv.Start(); err != nil {
-		log.Fatalf("mcp server: %v", err)
+		slog.Error("mcp server error", "err", err)
+		os.Exit(1)
 	}
 }

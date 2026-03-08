@@ -5,7 +5,9 @@ cmd/mcp/mcp
 # SQLite databases
 *.db
 
-# macOS
+# Build output
+bin/
+
 .DS_Store
 
 # Xcode user data

@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"fmt"
 	"net/http"
 
@@ -33,4 +34,9 @@ func NewServer(cfg Config, repo *db.Repository, sessions *SessionStore) *Server 
 // Start begins listening for incoming HTTP connections.
 func (s *Server) Start() error {
 	return s.http.ListenAndServe()
+}
+
+// Shutdown gracefully stops the HTTP server with the given context deadline.
+func (s *Server) Shutdown(ctx context.Context) error {
+	return s.http.Shutdown(ctx)
 }
