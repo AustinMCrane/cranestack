@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/AustinMCrane/toedoe/internal/apictx"
+	"github.com/AustinMCrane/cranekit/auth"
 	"github.com/AustinMCrane/toedoe/internal/db"
 )
 
@@ -25,7 +25,7 @@ func (h *Handlers) Login(w http.ResponseWriter, r *http.Request) {
 // GenerateMCPKey handles POST /auth/generate-mcp-key.
 // It generates a PAT, stores a SHA-256 hash of it, and returns the raw token once.
 func (h *Handlers) GenerateMCPKey(w http.ResponseWriter, r *http.Request) {
-	userID, ok := apictx.UserIDFromContext(r.Context())
+	userID, ok := auth.UserIDFromContext(r.Context())
 	if !ok {
 		http.Error(w, "unauthorized", http.StatusUnauthorized)
 		return

@@ -1,32 +1,20 @@
+import CraneKit
 import AuthenticationServices
-import Combine
 import Foundation
 
-/// Manages the user's authentication state and token lifecycle.
+/// App-specific auth manager. Inherits session state, devLogin, and APIClient
+/// from CraneKit's AuthManager base class.
 @MainActor
-final class AuthManager: ObservableObject {
-    @Published var isAuthenticated: Bool = false
+final class AppAuthManager: AuthManager {
     @Published var mcpAccessToken: String?
     @Published var mcpTokenError: String?
-
-    let apiClient = APIClient()
 
     /// Signs the user in with Apple ID.
     func loginWithApple() {
         // TODO: create ASAuthorizationAppleIDRequest
         // TODO: present ASAuthorizationController
-        // TODO: on success, send the identity token to POST /auth/login
-        // TODO: store the returned session token via apiClient.setAuthToken(_:) and set isAuthenticated = true
+        // TODO: on success, call completeLogin(token:) with the session token
     }
-
-    #if DEBUG
-    /// Bypasses authentication for local development. Remove before shipping.
-    /// Start the API server with DEV_SESSION_TOKEN=dev-session-token to match.
-    func devLogin() {
-        apiClient.setAuthToken("dev-session-token")
-        isAuthenticated = true
-    }
-    #endif
 
     /// Requests a new Personal Access Token (PAT) for use with the MCP server.
     func generateMCPAccessToken() {

@@ -4,24 +4,30 @@ import (
 	"database/sql"
 	"fmt"
 
-	_ "github.com/mattn/go-sqlite3"
+	cranedb "github.com/AustinMCrane/cranekit/db"
 )
 
-// Open initializes and returns a SQLite database connection.
-// It runs all schema migrations before returning.
+const createUsers = `
+CREATE TABLE IF NOT EXISTS users (
+    id         TEXT PRIMARY KEY,
+    email      TEXT NOT NULL UNIQUE,
+    created_at DATETIME NOT NULL DEFAULT (datetime('now'))
+);`
+
+const createAPIKeys = `
+CREATE TABLE IF NOT EXISTS api_keys (
+    id         TEXT PRIMARY KEY,
+    user_id    TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    key_hash   TEXT NOT NULL UNIQUE,
+    label      TEXT NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT (datetime('now'))
+);`
+
+// Open initializes the ToeDoe SQLite database and runs schema migrations.
 func Open(path string) (*sql.DB, error) {
-	db, err := sql.Open("sqlite3", path)
+	conn, err := cranedb.Open(path, []string{createUsers, createAPIKeys})
 	if err != nil {
-		return nil, fmt.Errorf("open sqlite: %w", err)
+		return nil, fmt.Errorf("toedoe db: %w", err)
 	}
-
-	if err := db.Ping(); err != nil {
-		return nil, fmt.Errorf("ping sqlite: %w", err)
-	}
-
-	if err := migrate(db); err != nil {
-		return nil, fmt.Errorf("migrate: %w", err)
-	}
-
-	return db, nil
+	return conn, nil
 }

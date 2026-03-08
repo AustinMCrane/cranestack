@@ -4,18 +4,12 @@ import (
 	"log/slog"
 	"os"
 
+	"github.com/AustinMCrane/cranekit/server"
 	"github.com/AustinMCrane/toedoe/internal/mcp"
 )
 
 func main() {
-	var handler slog.Handler
-	opts := &slog.HandlerOptions{Level: slog.LevelInfo}
-	if os.Getenv("LOG_FORMAT") == "text" {
-		handler = slog.NewTextHandler(os.Stdout, opts)
-	} else {
-		handler = slog.NewJSONHandler(os.Stdout, opts)
-	}
-	slog.SetDefault(slog.New(handler))
+	slog.SetDefault(server.NewLogger(os.Getenv("LOG_FORMAT")))
 
 	if os.Getenv("MCP_PAT_TOKEN") == "" {
 		slog.Error("MCP_PAT_TOKEN environment variable is required")

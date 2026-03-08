@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var authManager: AppAuthManager
 
     var body: some View {
         TabView {
@@ -21,5 +21,5 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
-        .environmentObject(AuthManager())
+        .environmentObject(AppAuthManager())
 }

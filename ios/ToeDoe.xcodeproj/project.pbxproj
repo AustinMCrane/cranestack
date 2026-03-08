@@ -13,6 +13,7 @@
 		E4E28C88286BA3F57A8ED0AE /* ToeDoeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E742F1BC90FFEF186353820 /* ToeDoeApp.swift */; };
 		F014A1F5F9B90F4EA1D5D95F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41042612F23DB288F30C515 /* LoginView.swift */; };
 		F20C915C700971EFAFB26812 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408A12324346AC9B2546E4E /* AuthManager.swift */; };
+		FE0779BAC7ADC9B73D2A11B0 /* CraneKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55CC582E0D8847420877BB9D /* CraneKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,17 +24,38 @@
 		8C9389E727119F996501973E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		98740E40DF7B5E820EFDC379 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		A41042612F23DB288F30C515 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A5C1A3B770585C0948A13C78 /* cranekit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cranekit; path = ../../cranekit; sourceTree = SOURCE_ROOT; };
 		CAC77156FE764B808DFD38DA /* ToeDoe.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ToeDoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FD08633EAAFD939DB67A1C /* ToeDoe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToeDoe.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0715A88A08334F7157F26607 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0779BAC7ADC9B73D2A11B0 /* CraneKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		098128F751253FAB439336DE = {
 			isa = PBXGroup;
 			children = (
+				28F78AC90D2F32F4A98245FF /* Packages */,
 				45E005689259BB6427132757 /* ToeDoe */,
 				721C6C4FC4143D35576B05E2 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		28F78AC90D2F32F4A98245FF /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A5C1A3B770585C0948A13C78 /* cranekit */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 		45E005689259BB6427132757 /* ToeDoe */ = {
@@ -75,6 +97,7 @@
 			buildConfigurationList = 9C6F3B189D902652B76C68E2 /* Build configuration list for PBXNativeTarget "ToeDoe" */;
 			buildPhases = (
 				D6AEA13AC9265A9BF43A3E95 /* Sources */,
+				0715A88A08334F7157F26607 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -82,6 +105,7 @@
 			);
 			name = ToeDoe;
 			packageProductDependencies = (
+				55CC582E0D8847420877BB9D /* CraneKit */,
 			);
 			productName = ToeDoe;
 			productReference = CAC77156FE764B808DFD38DA /* ToeDoe.app */;
@@ -110,6 +134,9 @@
 			);
 			mainGroup = 098128F751253FAB439336DE;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6FC2AB2D59F838873C0BE7A1 /* XCLocalSwiftPackageReference "../../cranekit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 721C6C4FC4143D35576B05E2 /* Products */;
 			projectDirPath = "";
@@ -318,6 +345,20 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		6FC2AB2D59F838873C0BE7A1 /* XCLocalSwiftPackageReference "../../cranekit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../cranekit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55CC582E0D8847420877BB9D /* CraneKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CraneKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4159B9C71865128E8FDAC19 /* Project object */;
 }

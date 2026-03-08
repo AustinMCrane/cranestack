@@ -5,6 +5,10 @@ options:
     iOS: "18.0"
   xcodeVersion: "16.0"
 
+packages:
+  CraneKit:
+    path: ../../cranekit
+
 targets:
   ToeDoe:
     type: application
@@ -12,6 +16,8 @@ targets:
     deploymentTarget: "18.0"
     sources:
       - path: ToeDoe
+    dependencies:
+      - package: CraneKit
     info:
       path: ToeDoe/Info.plist
       properties:

@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct ToeDoeApp: App {
-    @StateObject private var authManager = AuthManager()
+    @StateObject private var authManager = AppAuthManager()
 
     var body: some Scene {
         WindowGroup {

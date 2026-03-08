@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var authManager: AppAuthManager
 
     var body: some View {
         NavigationStack {
@@ -43,5 +43,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
-        .environmentObject(AuthManager())
+        .environmentObject(AppAuthManager())
 }

@@ -2,7 +2,7 @@ import AuthenticationServices
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var authManager: AppAuthManager
 
     var body: some View {
         VStack(spacing: 24) {
@@ -38,5 +38,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
-        .environmentObject(AuthManager())
+        .environmentObject(AppAuthManager())
 }
