@@ -2,8 +2,8 @@ name: ToeDoe
 options:
   bundleIdPrefix: com.austinmcrane
   deploymentTarget:
-    iOS: "18.0"
-  xcodeVersion: "16.0"
+    iOS: "17.0"
+  xcodeVersion: "15.0"
 
 packages:
   CraneKit:
@@ -13,7 +13,7 @@ targets:
   ToeDoe:
     type: application
     platform: iOS
-    deploymentTarget: "18.0"
+    deploymentTarget: "17.0"
     sources:
       - path: ToeDoe
     dependencies:
