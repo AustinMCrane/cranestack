@@ -10,14 +10,14 @@
 		3606D07EB45CC9C3BB97F086 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685824F9B2816A0649921C96 /* SettingsView.swift */; };
 		8DF788F861945A29E6D048A1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88448AFC0B790466976B4F04 /* APIClient.swift */; };
 		97D6D0ACF478D171AE7C6AB9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98740E40DF7B5E820EFDC379 /* MainTabView.swift */; };
-		E4E28C88286BA3F57A8ED0AE /* ToeDoeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E742F1BC90FFEF186353820 /* ToeDoeApp.swift */; };
+		E4E28C88286BA3F57A8ED0AE /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E742F1BC90FFEF186353820 /* MyApp.swift */; };
 		F014A1F5F9B90F4EA1D5D95F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41042612F23DB288F30C515 /* LoginView.swift */; };
 		F20C915C700971EFAFB26812 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408A12324346AC9B2546E4E /* AuthManager.swift */; };
 		FE0779BAC7ADC9B73D2A11B0 /* CraneKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55CC582E0D8847420877BB9D /* CraneKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E742F1BC90FFEF186353820 /* ToeDoeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToeDoeApp.swift; sourceTree = "<group>"; };
+		2E742F1BC90FFEF186353820 /* MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp.swift; sourceTree = "<group>"; };
 		685824F9B2816A0649921C96 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8408A12324346AC9B2546E4E /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		88448AFC0B790466976B4F04 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -25,8 +25,8 @@
 		98740E40DF7B5E820EFDC379 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		A41042612F23DB288F30C515 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A5C1A3B770585C0948A13C78 /* cranekit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cranekit; path = ../../cranekit; sourceTree = SOURCE_ROOT; };
-		CAC77156FE764B808DFD38DA /* ToeDoe.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ToeDoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8FD08633EAAFD939DB67A1C /* ToeDoe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToeDoe.entitlements; sourceTree = "<group>"; };
+		CAC77156FE764B808DFD38DA /* MyApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8FD08633EAAFD939DB67A1C /* MyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				28F78AC90D2F32F4A98245FF /* Packages */,
-				45E005689259BB6427132757 /* ToeDoe */,
+				45E005689259BB6427132757 /* MyApp */,
 				721C6C4FC4143D35576B05E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,23 +58,23 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		45E005689259BB6427132757 /* ToeDoe */ = {
+		45E005689259BB6427132757 /* MyApp */ = {
 			isa = PBXGroup;
 			children = (
 				88448AFC0B790466976B4F04 /* APIClient.swift */,
 				8408A12324346AC9B2546E4E /* AuthManager.swift */,
 				8C9389E727119F996501973E /* Info.plist */,
-				D8FD08633EAAFD939DB67A1C /* ToeDoe.entitlements */,
-				2E742F1BC90FFEF186353820 /* ToeDoeApp.swift */,
+				D8FD08633EAAFD939DB67A1C /* MyApp.entitlements */,
+				2E742F1BC90FFEF186353820 /* MyApp.swift */,
 				A2176261F8FEAA94E6E2A57F /* Views */,
 			);
-			path = ToeDoe;
+			path = MyApp;
 			sourceTree = "<group>";
 		};
 		721C6C4FC4143D35576B05E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAC77156FE764B808DFD38DA /* ToeDoe.app */,
+				CAC77156FE764B808DFD38DA /* MyApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,9 +92,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E9E1B8214EA77991085F004B /* ToeDoe */ = {
+		E9E1B8214EA77991085F004B /* MyApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C6F3B189D902652B76C68E2 /* Build configuration list for PBXNativeTarget "ToeDoe" */;
+			buildConfigurationList = 9C6F3B189D902652B76C68E2 /* Build configuration list for PBXNativeTarget "MyApp" */;
 			buildPhases = (
 				D6AEA13AC9265A9BF43A3E95 /* Sources */,
 				0715A88A08334F7157F26607 /* Frameworks */,
@@ -103,12 +103,12 @@
 			);
 			dependencies = (
 			);
-			name = ToeDoe;
+			name = MyApp;
 			packageProductDependencies = (
 				55CC582E0D8847420877BB9D /* CraneKit */,
 			);
-			productName = ToeDoe;
-			productReference = CAC77156FE764B808DFD38DA /* ToeDoe.app */;
+			productName = MyApp;
+			productReference = CAC77156FE764B808DFD38DA /* MyApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,7 +125,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DF2EB5C6CE73C6CB3FFA63CB /* Build configuration list for PBXProject "ToeDoe" */;
+			buildConfigurationList = DF2EB5C6CE73C6CB3FFA63CB /* Build configuration list for PBXProject "MyApp" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -142,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9E1B8214EA77991085F004B /* ToeDoe */,
+				E9E1B8214EA77991085F004B /* MyApp */,
 			);
 		};
 /* End PBXProject section */
@@ -157,7 +157,7 @@
 				F014A1F5F9B90F4EA1D5D95F /* LoginView.swift in Sources */,
 				97D6D0ACF478D171AE7C6AB9 /* MainTabView.swift in Sources */,
 				3606D07EB45CC9C3BB97F086 /* SettingsView.swift in Sources */,
-				E4E28C88286BA3F57A8ED0AE /* ToeDoeApp.swift in Sources */,
+				E4E28C88286BA3F57A8ED0AE /* MyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,16 +287,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ToeDoe/ToeDoe.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MyApp/MyApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = ToeDoe/Info.plist;
+				INFOPLIST_FILE = MyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.austinmcrane.toedoe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.austinmcrane.myapp;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,16 +307,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ToeDoe/ToeDoe.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MyApp/MyApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = ToeDoe/Info.plist;
+				INFOPLIST_FILE = MyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.austinmcrane.toedoe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.austinmcrane.myapp;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -326,7 +326,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C6F3B189D902652B76C68E2 /* Build configuration list for PBXNativeTarget "ToeDoe" */ = {
+		9C6F3B189D902652B76C68E2 /* Build configuration list for PBXNativeTarget "MyApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E34016285FA24A50C5504E3D /* Debug */,
@@ -335,7 +335,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		DF2EB5C6CE73C6CB3FFA63CB /* Build configuration list for PBXProject "ToeDoe" */ = {
+		DF2EB5C6CE73C6CB3FFA63CB /* Build configuration list for PBXProject "MyApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				460416EABFD62029DB2E9B58 /* Debug */,

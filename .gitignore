@@ -11,5 +11,5 @@ bin/
 .DS_Store
 
 # Xcode user data
-ios/ToeDoe.xcodeproj/xcuserdata/
-ios/ToeDoe.xcodeproj/project.xcworkspace/xcuserdata/
+ios/MyApp.xcodeproj/xcuserdata/
+ios/MyApp.xcodeproj/project.xcworkspace/xcuserdata/

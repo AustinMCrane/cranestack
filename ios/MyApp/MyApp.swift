@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct ToeDoeApp: App {
+struct MyApp: App {
     @StateObject private var authManager = AppAuthManager()
 
     var body: some Scene {
