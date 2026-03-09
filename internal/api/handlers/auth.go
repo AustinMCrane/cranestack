@@ -3,6 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"os"
+	"time"
 
 	"github.com/AustinMCrane/cranekit/auth"
 	"github.com/AustinMCrane/cranestack/internal/db"
@@ -20,7 +22,7 @@ func (h *Handlers) Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	claims, err := auth.ParseAppleIDToken(req.IdentityToken)
+	claims, err := auth.ParseAppleIDToken(r.Context(), req.IdentityToken, os.Getenv("APPLE_CLIENT_ID"))
 	if err != nil {
 		http.Error(w, "invalid identity token", http.StatusBadRequest)
 		return
@@ -37,7 +39,10 @@ func (h *Handlers) Login(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "failed to generate session", http.StatusInternalServerError)
 		return
 	}
-	h.sessions.Register(sessionToken, userID)
+	if err := h.sessions.Register(sessionToken, userID, time.Now().Add(24*time.Hour)); err != nil {
+		http.Error(w, "failed to store session", http.StatusInternalServerError)
+		return
+	}
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]string{"token": sessionToken})

@@ -6,7 +6,6 @@ import (
 	"os"
 	"time"
 
-	cranedb "github.com/AustinMCrane/cranekit/db"
 	"github.com/AustinMCrane/cranekit/server"
 	"github.com/AustinMCrane/cranestack/internal/api"
 	"github.com/AustinMCrane/cranestack/internal/db"
@@ -20,7 +19,7 @@ func main() {
 		dbPath = "cranestack.db"
 	}
 
-	sqlDB, err := db.Open(dbPath, []string{cranedb.SubscriptionSchema})
+	sqlDB, err := db.Open(dbPath, []string{db.SubscriptionSchema})
 	if err != nil {
 		slog.Error("open db", "err", err)
 		os.Exit(1)
@@ -39,7 +38,9 @@ func main() {
 		if err := repo.CreateUser(&db.User{ID: devUserID, Email: "dev@localhost"}); err != nil {
 			slog.Warn("create dev user", "err", err)
 		}
-		sessions.Register(devToken, devUserID)
+		if err := sessions.Register(devToken, devUserID, time.Now().Add(24*time.Hour)); err != nil {
+			slog.Warn("register dev session", "err", err)
+		}
 		slog.Warn("DEV session token registered — do not use in production", "userID", devUserID)
 	}
 

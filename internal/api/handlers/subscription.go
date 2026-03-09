@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/AustinMCrane/cranekit/auth"
-	cranedb "github.com/AustinMCrane/cranekit/db"
+	"github.com/AustinMCrane/cranestack/internal/db"
 )
 
 // subscriptionResponse is the JSON shape returned by subscription endpoints.
@@ -74,7 +74,7 @@ func (h *Handlers) CreateSubscription(w http.ResponseWriter, r *http.Request) {
 		req.ProductID = "monthly"
 	}
 
-	sub := &cranedb.Subscription{
+	sub := &db.Subscription{
 		UserID:    userID,
 		ProductID: req.ProductID,
 		Status:    "active",
