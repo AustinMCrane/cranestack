@@ -14,8 +14,8 @@ struct LoginView: View {
                 request.requestedScopes = [.fullName, .email]
             } onCompletion: { result in
                 switch result {
-                case .success:
-                    authManager.loginWithApple()
+                case .success(let authorization):
+                    authManager.loginWithApple(authorization: authorization)
                 case .failure(let error):
                     // TODO: surface error to user
                     print("Apple Sign-In failed: \(error)")

@@ -30,8 +30,7 @@ struct SubscriptionView: View {
 
                             Button {
                                 Task {
-                                    guard let token = authManager.sessionToken else { return }
-                                    await subscriptionManager.subscribe(sessionToken: token)
+                                    await subscriptionManager.subscribe()
                                 }
                             } label: {
                                 Text("Subscribe — \(monthlyPriceLabel)")
@@ -51,8 +50,7 @@ struct SubscriptionView: View {
             }
             .navigationTitle("Subscription")
             .task {
-                guard let token = authManager.sessionToken else { return }
-                await subscriptionManager.fetchStatus(sessionToken: token)
+                await subscriptionManager.fetchStatus()
             }
         }
     }
