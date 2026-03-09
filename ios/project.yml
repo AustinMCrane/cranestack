@@ -18,6 +18,9 @@ targets:
       - path: CraneStack
     dependencies:
       - package: CraneKit
+        product: CraneKit
+      - package: CraneKit
+        product: CraneKitUI
     info:
       path: CraneStack/Info.plist
       properties:

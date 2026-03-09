@@ -8,32 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		0ACA0B125E566C7399285177 /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C221DD0B1176B97A694ECDEF /* MyApp.swift */; };
-		283C3116CDA3873E344A6DEC /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1A0DCE032CD3DAE7FB13C /* AuthManager.swift */; };
 		577301C0840F660B1A3F1193 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EE055AA27724F105BAE94 /* LoginView.swift */; };
+		75F79715BB0E3F5CEA65F873 /* CraneKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3FAEB952A248BC1DDDD28339 /* CraneKitUI */; };
 		886EF9250FED23E663DCC87C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7D3E110155231150CBDABD /* MainTabView.swift */; };
 		9C5BFD4C515BF76A50E3CA49 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D5F1C40BC02C3B32F402E /* SettingsView.swift */; };
-		EDA8903F2F5EDB38007C353F /* CraneKit in Frameworks */ = {isa = PBXBuildFile; productRef = EDA8903E2F5EDB38007C353F /* CraneKit */; };
-		EEEBAA6AE4C9D45348127ADD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F88D557D233E69D10529242 /* APIClient.swift */; };
-		AA1122334455667788990011 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1122334455667788990011 /* SubscriptionManager.swift */; };
-		CC1122334455667788990011 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1122334455667788990011 /* SubscriptionView.swift */; };
-		EE1122334455667788990011 /* AISettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1122334455667788990011 /* AISettingsView.swift */; };
+		CC36292B8437490A6B662095 /* CraneKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55D501060FA3373E2FA7EB3F /* CraneKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		001D5F1C40BC02C3B32F402E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1E7D3E110155231150CBDABD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		3A14D7D77731D9A109459754 /* CraneStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CraneStack.entitlements; sourceTree = "<group>"; };
-		4F88D557D233E69D10529242 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		52E1A0DCE032CD3DAE7FB13C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5B7EE055AA27724F105BAE94 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5D07AF0A2CCEBAFF09BD25F4 /* MyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyApp.entitlements; sourceTree = "<group>"; };
 		99CC790C6470AEC4D2431E9A /* CraneStack.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CraneStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A37E807F5E7B7F162A6579 /* cranekit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cranekit; path = ../../cranekit; sourceTree = SOURCE_ROOT; };
 		C221DD0B1176B97A694ECDEF /* MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp.swift; sourceTree = "<group>"; };
 		FD723E4C6E070742B2F749D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		BB1122334455667788990011 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
-		DD1122334455667788990011 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
-		FF1122334455667788990011 /* AISettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDA8903F2F5EDB38007C353F /* CraneKit in Frameworks */,
+				CC36292B8437490A6B662095 /* CraneKit in Frameworks */,
+				75F79715BB0E3F5CEA65F873 /* CraneKitUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +45,6 @@
 			children = (
 				AB0B8E1E0D1C5CAEC97FB18E /* CraneStack */,
 				9C804B322236903B47F522D4 /* Packages */,
-				EDA8903D2F5EDB38007C353F /* Frameworks */,
 				D69305B17DBDA7DE68386BFD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,8 +63,6 @@
 				5B7EE055AA27724F105BAE94 /* LoginView.swift */,
 				1E7D3E110155231150CBDABD /* MainTabView.swift */,
 				001D5F1C40BC02C3B32F402E /* SettingsView.swift */,
-				DD1122334455667788990011 /* SubscriptionView.swift */,
-				FF1122334455667788990011 /* AISettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -81,9 +70,6 @@
 		AB0B8E1E0D1C5CAEC97FB18E /* CraneStack */ = {
 			isa = PBXGroup;
 			children = (
-				4F88D557D233E69D10529242 /* APIClient.swift */,
-				52E1A0DCE032CD3DAE7FB13C /* AuthManager.swift */,
-				BB1122334455667788990011 /* SubscriptionManager.swift */,
 				3A14D7D77731D9A109459754 /* CraneStack.entitlements */,
 				FD723E4C6E070742B2F749D1 /* Info.plist */,
 				5D07AF0A2CCEBAFF09BD25F4 /* MyApp.entitlements */,
@@ -99,13 +85,6 @@
 				99CC790C6470AEC4D2431E9A /* CraneStack.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EDA8903D2F5EDB38007C353F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +103,8 @@
 			);
 			name = CraneStack;
 			packageProductDependencies = (
-				EDA8903E2F5EDB38007C353F /* CraneKit */,
+				55D501060FA3373E2FA7EB3F /* CraneKit */,
+				3FAEB952A248BC1DDDD28339 /* CraneKitUI */,
 			);
 			productName = CraneStack;
 			productReference = 99CC790C6470AEC4D2431E9A /* CraneStack.app */;
@@ -171,15 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEEBAA6AE4C9D45348127ADD /* APIClient.swift in Sources */,
-				283C3116CDA3873E344A6DEC /* AuthManager.swift in Sources */,
-				AA1122334455667788990011 /* SubscriptionManager.swift in Sources */,
 				577301C0840F660B1A3F1193 /* LoginView.swift in Sources */,
 				886EF9250FED23E663DCC87C /* MainTabView.swift in Sources */,
 				0ACA0B125E566C7399285177 /* MyApp.swift in Sources */,
 				9C5BFD4C515BF76A50E3CA49 /* SettingsView.swift in Sources */,
-				CC1122334455667788990011 /* SubscriptionView.swift in Sources */,
-				EE1122334455667788990011 /* AISettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,9 +351,12 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EDA8903E2F5EDB38007C353F /* CraneKit */ = {
+		3FAEB952A248BC1DDDD28339 /* CraneKitUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EDD588FA86E0D46C16F5D47F /* XCLocalSwiftPackageReference "../../cranekit" */;
+			productName = CraneKitUI;
+		};
+		55D501060FA3373E2FA7EB3F /* CraneKit */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = CraneKit;
 		};
 /* End XCSwiftPackageProductDependency section */

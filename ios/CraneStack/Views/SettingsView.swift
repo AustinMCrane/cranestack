@@ -1,18 +1,21 @@
 import SwiftUI
+import CraneKit
+import CraneKitUI
 
 struct SettingsView: View {
-    @EnvironmentObject var authManager: AppAuthManager
+    @EnvironmentObject var authManager: AuthManager
     @StateObject private var subscriptionManager = AppSubscriptionManager()
 
     var body: some View {
         NavigationStack {
             List {
                 NavigationLink("Subscription") {
-                    SubscriptionView()
+                    CraneKitUI.SubscriptionView(priceLabel: "$4.99 / month")
                         .environmentObject(subscriptionManager)
                 }
                 NavigationLink("AI Settings") {
-                    AISettingsView()
+                    MCPTokenView()
+                        .environmentObject(authManager)
                 }
             }
             .navigationTitle("Settings")
@@ -22,5 +25,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
-        .environmentObject(AppAuthManager())
+        .environmentObject(AuthManager())
 }

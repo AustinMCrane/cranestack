@@ -1,7 +1,8 @@
 import SwiftUI
+import CraneKit
 
 struct MainTabView: View {
-    @EnvironmentObject var authManager: AppAuthManager
+    @EnvironmentObject var authManager: AuthManager
 
     var body: some View {
         TabView {
@@ -21,5 +22,5 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
-        .environmentObject(AppAuthManager())
+        .environmentObject(AuthManager())
 }
