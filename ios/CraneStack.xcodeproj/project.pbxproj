@@ -16,6 +16,7 @@
 		EEEBAA6AE4C9D45348127ADD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F88D557D233E69D10529242 /* APIClient.swift */; };
 		AA1122334455667788990011 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1122334455667788990011 /* SubscriptionManager.swift */; };
 		CC1122334455667788990011 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1122334455667788990011 /* SubscriptionView.swift */; };
+		EE1122334455667788990011 /* AISettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1122334455667788990011 /* AISettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FD723E4C6E070742B2F749D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB1122334455667788990011 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		DD1122334455667788990011 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		FF1122334455667788990011 /* AISettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				1E7D3E110155231150CBDABD /* MainTabView.swift */,
 				001D5F1C40BC02C3B32F402E /* SettingsView.swift */,
 				DD1122334455667788990011 /* SubscriptionView.swift */,
+				FF1122334455667788990011 /* AISettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				0ACA0B125E566C7399285177 /* MyApp.swift in Sources */,
 				9C5BFD4C515BF76A50E3CA49 /* SettingsView.swift in Sources */,
 				CC1122334455667788990011 /* SubscriptionView.swift in Sources */,
+				EE1122334455667788990011 /* AISettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

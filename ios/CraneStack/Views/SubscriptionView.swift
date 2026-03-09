@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct SubscriptionView: View {
-    @EnvironmentObject var authManager: AppAuthManager
     @EnvironmentObject var subscriptionManager: AppSubscriptionManager
 
     // TODO: Replace with a price fetched from your backend or StoreKit product.
@@ -58,6 +57,5 @@ struct SubscriptionView: View {
 
 #Preview {
     SubscriptionView()
-        .environmentObject(AppAuthManager())
         .environmentObject(AppSubscriptionManager())
 }
