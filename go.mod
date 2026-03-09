@@ -5,7 +5,6 @@ go 1.23.0
 require (
 	github.com/AustinMCrane/cranekit v0.3.0
 	github.com/go-chi/chi/v5 v5.2.5
-	github.com/mark3labs/mcp-go v0.45.0
 )
 
 require (
@@ -14,6 +13,7 @@ require (
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/invopop/jsonschema v0.13.0 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
+	github.com/mark3labs/mcp-go v0.45.0 // indirect
 	github.com/mattn/go-sqlite3 v1.14.34 // indirect
 	github.com/spf13/cast v1.7.1 // indirect
 	github.com/wk8/go-ordered-map/v2 v2.1.8 // indirect

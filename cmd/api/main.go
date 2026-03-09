@@ -6,6 +6,7 @@ import (
 	"os"
 	"time"
 
+	cranedb "github.com/AustinMCrane/cranekit/db"
 	"github.com/AustinMCrane/cranekit/server"
 	"github.com/AustinMCrane/cranestack/internal/api"
 	"github.com/AustinMCrane/cranestack/internal/db"
@@ -19,7 +20,7 @@ func main() {
 		dbPath = "cranestack.db"
 	}
 
-	sqlDB, err := db.Open(dbPath, nil)
+	sqlDB, err := db.Open(dbPath, []string{cranedb.SubscriptionSchema})
 	if err != nil {
 		slog.Error("open db", "err", err)
 		os.Exit(1)

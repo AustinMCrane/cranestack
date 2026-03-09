@@ -23,6 +23,8 @@ func (s *Server) routes() *chi.Mux {
 		r.Use(RequireAnyAuth(s.sessions, s.repo))
 		r.Post("/auth/generate-mcp-key", h.GenerateMCPKey)
 		r.Get("/api/data", h.GetData)
+		r.Get("/api/subscriptions", h.GetSubscription)
+		r.Post("/api/subscriptions", h.CreateSubscription)
 	})
 
 	return r
