@@ -1,7 +1,8 @@
 package api
 
 import (
-	"github.com/AustinMCrane/cranestack/internal/api/handlers"
+	"github.com/AustinMCrane/cranekit/auth"
+	"github.com/AustinMCrane/cranekit/handlers"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
@@ -13,18 +14,20 @@ func (s *Server) routes() *chi.Mux {
 	r.Use(middleware.Logger)
 	r.Use(middleware.Recoverer)
 
-	h := handlers.New(s.repo, s.sessions)
+	kit := handlers.New(s.repo, s.repo, s.sessions, handlers.Config{
+		AppleClientID: s.cfg.AppleClientID,
+		PATPrefix:     s.cfg.PATPrefix,
+	})
 
 	// Public auth endpoints
-	r.Post("/auth/login", h.Login)
+	r.Post("/auth/login", kit.Login)
 
 	// Protected endpoints — require a valid session token or PAT
 	r.Group(func(r chi.Router) {
-		r.Use(RequireAnyAuth(s.sessions, s.repo))
-		r.Post("/auth/generate-mcp-key", h.GenerateMCPKey)
-		r.Get("/api/data", h.GetData)
-		r.Get("/api/subscriptions", h.GetSubscription)
-		r.Post("/api/subscriptions", h.CreateSubscription)
+		r.Use(auth.RequireAnyAuth(s.sessions, s.repo))
+		r.Post("/auth/generate-mcp-key", kit.GenerateMCPKey)
+		r.Get("/api/subscriptions", kit.GetSubscription)
+		r.Post("/api/subscriptions", kit.CreateSubscription)
 	})
 
 	return r

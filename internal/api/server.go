@@ -10,7 +10,9 @@ import (
 
 // Config holds runtime configuration for the API server.
 type Config struct {
-	Port int
+	Port          int
+	AppleClientID string
+	PATPrefix     string
 }
 
 // Server is the HTTP API server.

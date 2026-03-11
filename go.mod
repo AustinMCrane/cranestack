@@ -22,4 +22,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/AustinMCrane/cranekit v0.3.0 => ../cranekit
+replace github.com/AustinMCrane/cranekit v0.3.0 => ../cranekit/backend/
